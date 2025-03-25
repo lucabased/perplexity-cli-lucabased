@@ -94,11 +94,11 @@ class Perplexity:
         if not args.api_key:
             api_key = ApiKeyValidator.get_api_key_from_system()
             if api_key is None:
-                display("Api key not found on system! ", "red")
-                logger.debug("Api key not found on system!")
+                display("API key not found on system! ", "red")
+                logger.debug("API key not found on system!")
                 raise ApiKeyNotFoundException
             else:
-                logger.debug(f"Api key found on system: {api_key}")
+                logger.debug(f"API key found on system: {api_key}")
                 self.setup.api_key = api_key
         else:
             self.setup.api_key = args.api_key
@@ -113,7 +113,7 @@ class Perplexity:
         query_data = {
             "model": self.setup.model,
             "messages": [
-                {"role": "system", "content": "Be precise and concise."},
+                {"role": "system", "content": "Be precise and concise. Give me the most unbiased answer."},
                 {"role": "user", "content": message},
             ],
         }

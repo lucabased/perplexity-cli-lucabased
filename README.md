@@ -17,19 +17,19 @@ Perplexity CLI is a simple and convenient command-line client for the Perplexity
 ## Installation
 No installation is required. You can run the script directly from the GitHub repository or install it locally.Example of local installation:
 
-```bash
+```zsh
 curl -s https://raw.githubusercontent.com/dawid-szewc/perplexity-cli/main/perplexity.py > ~/.local/bin/perplexity \
 chmod +x ~/.local/bin/perplexity \
-echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc \
-echo 'export PERPLEXITY_API_KEY="your-api-key"' >> ~/.bashrc
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc \
+echo 'export PERPLEXITY_API_KEY="your-api-key"' >> ~/.zshrc
 ```
 ## Usage
-```bash
+```zsh
 perplexity "What is the meaning of life?"
 ```
 
 ## With Additional Options
-```bash
+```zsh
 perplexity -uc -m sonar-pro "Explain Einstein's theory of relativity"
 ```
 
@@ -42,21 +42,23 @@ perplexity -uc -m sonar-pro "Explain Einstein's theory of relativity"
 -   `-m MODEL`, `--model MODEL`: Choose the language model (default: sonar-pro)
 
 ## Available Models
+-   sonar-deep-research
 -   sonar-reasoning-pro
 -   sonar-reasoning
 -   sonar-pro
 -   sonar
+-   r1-1776   (uncensored & unbiased, R1-Retrain)
 
 ## Configuration
 Set the `PERPLEXITY_API_KEY` environment variable with your Perplexity API key:
-```bash
+```zsh
 export PERPLEXITY_API_KEY="your-api-key"
 ``` 
 
 ## License
 This project is released under the MIT License.
 
-## Author
+## Original Author
 Dawid Szewc
 
 ## Contributing
