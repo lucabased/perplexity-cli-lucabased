@@ -8,10 +8,12 @@ import requests
 import json
 
 AVAILABLE_MODELS = [
+    "sonar-deep-research",
     "sonar-reasoning-pro",
     "sonar-reasoning",
     "sonar-pro",
-    "sonar"
+    "sonar",
+    "r1-1776", # Unbiased / uncensored
 ]
 
 logger = logging.getLogger(__name__)
