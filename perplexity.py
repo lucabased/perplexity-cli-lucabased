@@ -6,6 +6,7 @@ import sys
 from dataclasses import dataclass
 import requests
 import json
+import time
 
 AVAILABLE_MODELS = [
     "sonar-deep-research",
@@ -17,7 +18,7 @@ AVAILABLE_MODELS = [
 ]
 
 logger = logging.getLogger(__name__)
-
+start_time = time.time()
 
 class ApiKeyNotFoundException(Exception):
     pass
@@ -160,8 +161,10 @@ class Perplexity:
             print("# Content")
         else:
             display("Content \n", "yellow", True, "blue")
+        end_time = time.time()
+        time_taken = end_time - start_time # format this
         print(result)
-
+        print(f"# Time taken: {round(time_taken, 1)}s")
 
 def main() -> None:
     parser = argparse.ArgumentParser()
